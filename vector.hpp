@@ -22,9 +22,8 @@ private:
     elemtipus *data;                    // Elemtipus pointer ami mutat a vektorunk kezdetére
     int db;                                 // vektorunk hossza
 public:
-    Vektor(const Vektor<elemtipus> & V)                    // másoló konstruktor
+    Vektor(const Vektor<elemtipus> & V):data(NULL),db(0)                    // másoló konstruktor
     {
-        std::cout<<"konst1("<<V.db<<":"<<V.data[0]<<")";
         db = V.db;
         data = (elemtipus*)malloc (db*sizeof(elemtipus));
         for (int i=0; i<db; i++)
@@ -37,7 +36,6 @@ public:
 
     Vektor <elemtipus>(int n=0): data(NULL),db(n)
     {
-        std::cout<<"konst2";
         try
         {
             data = (elemtipus*)malloc (n*sizeof(elemtipus));
@@ -45,7 +43,6 @@ public:
             {
                 for (int i=0;i<db;i++)
                 {
-                    std::cout<<"data["<<i<<"]=0;";
                     data[i]=0;
                 }
             }
@@ -53,7 +50,6 @@ public:
             {
                 for (int i=0;i<db;i++)
                 {
-                    std::cout<<"data["<<i<<"].inic();";
                     ((Vektor*)data)[i].inic();
                 }
             }
@@ -79,14 +75,12 @@ public:
 
     void inic()
     {
-        std::cout<<"inic";
         db=0;data=NULL;
     }
 
     Vektor & operator= (Vektor V)                 // = operator, ami többszörösen is használható
     {
         if (this==&V) return *this;
-        std::cout<<"haho"<<V[0];
         if (data!=NULL)
             free(data);
         db=V.db;
