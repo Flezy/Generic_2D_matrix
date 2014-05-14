@@ -2,7 +2,6 @@
 #define VECTOR_HPP
 #include<iostream>
 #include<typeinfo>
-#include"memtrace.h"
 #include<fstream>
 #include<cstdio>
 #include<cstdlib>
