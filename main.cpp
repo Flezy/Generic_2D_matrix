@@ -5,6 +5,8 @@
 #include "matrix_szorzas.hpp"
 #include "vector.hpp"
 
+using namespace std;
+
 Vektor<Vektor<int> > Beolvas()
 {
     int snumber, onumber;      // az aktuális mátrix sorszáma és oszlopsszáma
@@ -30,30 +32,36 @@ Vektor<Vektor<int> > Beolvas()
         w[i]=v;                     // Vektor elemi vektorok, így ezt megtehetjük
 
     }
+    std::cout<<"return";
     return w;
 }
-
-using namespace std;
 
 int main()
 {
     Vektor<Vektor<int> > w, s;
+    w.inic();
+    s.inic();
+    std::cout<<"olvasok\n";
     w=Beolvas();
+    std::cout<<"olvasok\n";
     s=Beolvas();
+    std::cout<<"koszke\n";
     int snumber=w.getdb();
     int onumber=w[0].getdb();
-    Vektor<Vektor<int> > ER(snumber);
     std::cout<<"valami8";
-
     Vektor<Vektor<int> > ER1(snumber);
+    ER1.inic();
     std::cout<<"valami9";
     Vektor<Vektor<int> > ER2(snumber);
+    ER2.inic();
     std::cout<<"valami";
     ER1=w+s;
     std::cout<<"valami";
     std::cout<<w<<s<<ER1;
     ER2=w*2;
     std::cout<<ER2;
+    Vektor<Vektor<int> > ER(snumber);
+    ER.inic();
     matrix_szoroz<int>(w,s,ER);              // mátrixszorzás
     std::cout<<ER;
 
