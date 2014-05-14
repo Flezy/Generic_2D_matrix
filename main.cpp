@@ -4,7 +4,6 @@
 #include<cstdlib>
 #include "matrix_szorzas.hpp"
 #include "vector.hpp"
-#include "memtrace.h"
 
 Vektor<Vektor<int> > Beolvas()
 {
@@ -38,7 +37,6 @@ using namespace std;
 
 int main()
 {
-    _StartMemoryCheck() ;   // Memtrace
     Vektor<Vektor<int> > w, s;
     w=Beolvas();
     s=Beolvas();
@@ -58,7 +56,6 @@ int main()
     std::cout<<ER2;
     matrix_szoroz<int>(w,s,ER);              // mátrixszorzás
     std::cout<<ER;
-    _CrtDumpMemoryLeaks();
 
     return 0;
 }

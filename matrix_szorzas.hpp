@@ -2,7 +2,6 @@
 #define MATRIX_SZOROZ
 #include "vector.hpp"
 #include<iostream>
-#include"memtrace.h"
 
 template <class elemtipus>
 void matrix_szoroz(Vektor <Vektor<elemtipus> >& A, Vektor <Vektor<elemtipus> >& B, Vektor<Vektor<elemtipus> >& C)
